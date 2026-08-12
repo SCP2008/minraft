@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>TV - Sinalização Digital</title>
+  <link rel="stylesheet" href="player.css" />
+</head>
+<body>
+  <div id="stage">
+    <video id="player" muted playsinline autoplay></video>
+    <div id="placeholder">
+      <div class="logo">📺</div>
+      <p>Aguardando vídeos...</p>
+      <span class="watermark">B-Max Sites</span>
+    </div>
+    <div id="tap-overlay">
+      <p>Toque na tela para iniciar a reprodução</p>
+    </div>
+    <div id="blocked-overlay">
+      <div class="logo">🔒</div>
+      <p>Limite de telas atingido para este sistema.</p>
+      <p class="small">Entre em contato com a B-Max Sites para liberar mais uma TV.</p>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="player.js"></script>
+</body>
+</html>
