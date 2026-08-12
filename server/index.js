@@ -45,9 +45,7 @@ app.use('/api', authRoutes);
 app.use('/api', videoRoutes);
 app.use('/api', vendorRoutes);
 
-app.get('/', (req, res) => {
-  res.redirect('/admin');
-});
+app.use('/', express.static(path.join(__dirname, '..', 'public', 'home')));
 
 app.use((err, req, res, next) => {
   console.error(err);
