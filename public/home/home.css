@@ -1,0 +1,64 @@
+.home-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.home-wrap .brand { margin-bottom: 8px; }
+.home-wrap .subtitle { margin-bottom: 28px; }
+
+.home-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 380px;
+  background:
+    linear-gradient(var(--accent-2), var(--accent-2)) no-repeat top left / 14px 2px,
+    linear-gradient(var(--accent-2), var(--accent-2)) no-repeat top left / 2px 14px,
+    linear-gradient(var(--accent-2), var(--accent-2)) no-repeat bottom right / 14px 2px,
+    linear-gradient(var(--accent-2), var(--accent-2)) no-repeat bottom right / 2px 14px,
+    var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px 20px 4px 20px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(16px);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+.home-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 16px; right: 16px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent-2) 55%, transparent), transparent);
+}
+.home-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--accent-1) 14%, transparent), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.home-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent-1) 55%, var(--border));
+}
+.home-card:hover::after { opacity: 1; }
+.home-card:active { transform: translateY(0); }
+
+.home-card-icon { font-size: 28px; line-height: 1; }
+
+.home-card-text { display: flex; flex-direction: column; gap: 3px; }
+.home-card-text strong { font-size: 15px; }
+.home-card-text span { font-size: 12.5px; color: var(--text-dim); }
